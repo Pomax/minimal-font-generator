@@ -45,6 +45,12 @@
       (() => {
         const line = `AAAAAAAAAA`;
         insertme.textContent = line.repeat(10);
+        setTimeout(() => {
+          if (insertme.getBoundingClientRect().width !== 0) {
+            // compensate for reader mode ruining this particular kind of fun:
+            insertme.textContent = ``;
+          }
+        }, 10);
       })();
     </script>
 
@@ -1122,10 +1128,11 @@ m1heHA9BqA4CBuYW1lA9cgA4gcG9zdA9HoA4IA2BA5QABA111BA10wABA2gA4BA2EA2EA3BB//8A3BB/
 
     <p>
       But you want proof that it works. I anticipated this, and made sure that
-      this very page uses this font. Of course, it's tiny, so you didn't see it,
-      but just for fun, scroll to the top of this page... do you see the text
-      <strong>"Let's make a small font"</strong>? Copy-paste that text. Anywhere
-      will do, a text editor is the most useful.
+      this very page uses this font (provided you're not reading this in Reader
+      Mode, because that bypasses webfonts). Of course, it's tiny, so you didn't
+      see it, but just for fun, scroll to the top of this page... do you see the
+      text <strong>"Let's make a small font"</strong>? Copy-paste that text.
+      Anywhere will do, a text editor is the most useful.
     </p>
 
     <p>
