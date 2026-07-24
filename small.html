@@ -224,9 +224,9 @@
       reasons, but we're only targeting a single platform. So: let's rewrite
       that to only having a single cmap record for platform id 0, meaning we're
       targetig the generic "Unicode" platform rather than Windows or Mac etc,
-      with platform-specific encoding id 0, meaning we're targeting "unicode
-      1.0" (which is deprecated, but perfectly legal) and then point to a format
-      4 subtable, that should work just fine.
+      and then point to a format 4 subtable, which is how you map unicode
+      codepoints in the <a href="https://en.wikipedia.org/wiki/Plane_(Unicode)">BMP</a>
+      to internal glyph ids, so that should work just fine.
     </p>
 
     <p>And now our font's 1092 bytes.</p>
